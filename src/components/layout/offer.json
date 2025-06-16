@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_layout_offers",
+  "info": {
+    "displayName": "Offer",
+    "icon": "chartPie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "paymentPercentage": {
+      "type": "decimal"
+    },
+    "paymentDuration": {
+      "type": "decimal"
+    },
+    "paymentType": {
+      "type": "enumeration",
+      "enum": [
+        "Discount",
+        "Down Payment",
+        "Special Offer"
+      ]
+    },
+    "isOriginalPlan": {
+      "type": "boolean"
+    },
+    "isRecommended": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

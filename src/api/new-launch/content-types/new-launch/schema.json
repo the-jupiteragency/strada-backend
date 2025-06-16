@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "new_launches",
+  "info": {
+    "singularName": "new-launch",
+    "pluralName": "new-launches",
+    "displayName": "New Launch"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "blocks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero-section"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

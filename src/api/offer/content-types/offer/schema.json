@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer",
+    "description": "Offer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "blocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.offer"
+    },
+    "compound": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::compound.compound",
+      "inversedBy": "offer"
+    },
+    "developer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::developer.developer",
+      "inversedBy": "offers"
+    },
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
