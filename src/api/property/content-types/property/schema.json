@@ -53,7 +53,7 @@
       "required": true
     },
     "startPrice": {
-      "type": "decimal"
+      "type": "biginteger"
     },
     "propertyType": {
       "type": "enumeration",
@@ -92,35 +92,12 @@
         "Furnished"
       ]
     },
-    "amenities": {
-      "type": "customField",
-      "default": "[]",
-      "customField": "plugin::multi-select.multi-select",
-      "options": [
-        "garden  ",
-        "has roof  ",
-        "bicycles lanes  ",
-        "disability support  ",
-        "jogging trail  ",
-        "outdoor pools  ",
-        "mosque  ",
-        "sports clubs  ",
-        "business hub  ",
-        "commercial strip  ",
-        "medical center  ",
-        "schools  ",
-        "underground parking  ",
-        "clubhouse  ",
-        "acs  ",
-        "kitchen"
-      ]
-    },
     "slug": {
       "type": "uid",
       "targetField": "name",
       "required": true
     },
-    "isSoldout": {
+    "isResale": {
       "type": "boolean",
       "default": false
     },
@@ -128,24 +105,14 @@
       "type": "boolean",
       "default": false
     },
-    "locationOnMap": {
-      "type": "customField",
-      "options": {
-        "info": true
-      },
-      "customField": "plugin::geodata.geojson"
-    },
     "compound": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::compound.compound",
       "inversedBy": "properties"
     },
-    "maxPrice": {
-      "type": "decimal"
-    },
-    "description": {
-      "type": "text"
+    "downPayment": {
+      "type": "biginteger"
     }
   }
 }

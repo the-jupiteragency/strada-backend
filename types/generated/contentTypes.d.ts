@@ -800,7 +800,7 @@ export interface ApiCompoundCompound extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
-    startPrice: Schema.Attribute.Decimal;
+    startPrice: Schema.Attribute.BigInteger;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -973,29 +973,6 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    amenities: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'garden  ',
-          'has roof  ',
-          'bicycles lanes  ',
-          'disability support  ',
-          'jogging trail  ',
-          'outdoor pools  ',
-          'mosque  ',
-          'sports clubs  ',
-          'business hub  ',
-          'commercial strip  ',
-          'medical center  ',
-          'schools  ',
-          'underground parking  ',
-          'clubhouse  ',
-          'acs  ',
-          'kitchen',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     banner: Schema.Attribute.Media<'images' | 'files'>;
     bathrooms: Schema.Attribute.Integer;
     bedrooms: Schema.Attribute.Integer;
@@ -1004,29 +981,21 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     deliveryIn: Schema.Attribute.Integer;
-    description: Schema.Attribute.Text;
+    downPayment: Schema.Attribute.BigInteger;
     finishing: Schema.Attribute.Enumeration<
       ['Not Finished', 'Semi Finished', 'Finished', 'Furnished']
     >;
     floorPlanImage: Schema.Attribute.Media<'images' | 'files'>;
     imageGallery: Schema.Attribute.Media<'images' | 'files', true>;
     isRecommended: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    isSoldout: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isResale: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::property.property'
     > &
       Schema.Attribute.Private;
-    locationOnMap: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::geodata.geojson',
-        {
-          info: true;
-        }
-      >;
     masterPlanImage: Schema.Attribute.Media<'images' | 'files'>;
-    maxPrice: Schema.Attribute.Decimal;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     propertyType: Schema.Attribute.Enumeration<
       [
@@ -1046,7 +1015,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     squareMeters: Schema.Attribute.Integer;
-    startPrice: Schema.Attribute.Decimal;
+    startPrice: Schema.Attribute.BigInteger;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
