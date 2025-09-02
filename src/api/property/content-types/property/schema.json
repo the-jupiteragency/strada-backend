@@ -97,10 +97,6 @@
       "targetField": "name",
       "required": true
     },
-    "isResale": {
-      "type": "boolean",
-      "default": false
-    },
     "isRecommended": {
       "type": "boolean",
       "default": false
@@ -110,6 +106,10 @@
       "relation": "manyToOne",
       "target": "api::compound.compound",
       "inversedBy": "properties"
+    },
+    "isResale": {
+      "type": "boolean",
+      "default": false
     },
     "downPayment": {
       "type": "decimal"
