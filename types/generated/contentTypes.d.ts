@@ -981,7 +981,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     deliveryIn: Schema.Attribute.Integer;
-    downPayment: Schema.Attribute.BigInteger;
+    downPayment: Schema.Attribute.Decimal;
     finishing: Schema.Attribute.Enumeration<
       ['Not Finished', 'Semi Finished', 'Finished', 'Furnished']
     >;

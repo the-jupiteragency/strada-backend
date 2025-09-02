@@ -112,7 +112,7 @@
       "inversedBy": "properties"
     },
     "downPayment": {
-      "type": "biginteger"
+      "type": "decimal"
     }
   }
 }
